@@ -74,7 +74,6 @@ app.get('/ping', (req, res) => {
 app.post('/process-thumbnail', async (req, res) => {
     const { data, handleAsync = true } = req.body;
     let resp = { success: true, message: 'initiated', error: null};
-        return res.status(400).send({ ...resp, message: "Cannot be processed", error: "Received invalid body", success: false });
     if (handleAsync) res.send(resp);
     
     try {
