@@ -87,7 +87,7 @@ app.post('/process-thumbnail', async (req, res) => {
         resp = { ...resp, message: `Image process failed for object`, error: error.message, success: false };
     } finally {
         // console.log("resp thumbnail",resp);
-        resp = { ...resp, message: `Image process failed for object `, error: "finally block", success: false };
+        resp = { ...resp, message: `Image process failed for object `, error: error.message, success: false };
         if (!handleAsync) res.send(resp);
         return resp
     }
