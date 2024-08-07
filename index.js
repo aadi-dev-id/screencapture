@@ -79,6 +79,7 @@ app.post('/process-thumbnail', async (req, res) => {
         // thumbnailBuffer = await captureScreenshot(data);
         resp = { ...resp, message: `Image process complete for object `, result: [{ body: uploadStatus, metaData }] };
         logger.info(resp.message);
+        return resp
     } catch (error) {
         logger.error('error =>' + error.message);
         resp = { ...resp, message: `Image process failed for object`, error: error.message, success: false };
