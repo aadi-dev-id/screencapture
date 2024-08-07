@@ -7,9 +7,7 @@ const puppeteer = require('puppeteer');
 const gm = require('gm').subClass({ imageMagick: '7+' });
 const { Buffer } = require('buffer');
 const { createCanvas, loadImage } = require('canvas');
-const psd = require('psd');
 
-const { fromBuffer } = require('file-type-cjs');
 
 const app = express();
 
