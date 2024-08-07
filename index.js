@@ -74,12 +74,9 @@ app.get('/ping', (req, res) => {
 app.post('/process-thumbnail', async (req, res) => {
     const { data, handleAsync = true } = req.body;
     let resp = { success: true, message: 'initiated', error: null};
-    
     try {
         let thumbnailBuffer;
-
-        thumbnailBuffer = await captureScreenshot(data);
-
+        // thumbnailBuffer = await captureScreenshot(data);
         resp = { ...resp, message: `Image process complete for object `, result: [{ body: uploadStatus, metaData }] };
         logger.info(resp.message);
     } catch (error) {
