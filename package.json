@@ -22,7 +22,7 @@
     "morgan": "^1.10.0",
     "nodemon": "^2.0.18",
     "psd": "^3.4.0",
-    "puppeteer": "^19.4.1",
+    "puppeteer": "^22.8.2",
     "response-time": "^2.3.2",
     "winston": "^3.8.0",
     "winston-daily-rotate-file": "^4.7.1"
