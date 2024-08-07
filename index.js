@@ -1,11 +1,9 @@
 const cors = require('cors');
 const mime = require('mime');
-const AWS = require('aws-sdk');
 const express = require('express');
 const bodyParser = require('body-parser');
 const responseTime = require('response-time');
 const puppeteer = require('puppeteer');
-const s3ParseUrl = require('s3-url-parser');
 const gm = require('gm').subClass({ imageMagick: '7+' });
 const { Buffer } = require('buffer');
 const { createCanvas, loadImage } = require('canvas');
