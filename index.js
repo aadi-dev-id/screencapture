@@ -74,20 +74,20 @@ app.get('/ping', (req, res) => {
 app.post('/process-thumbnail', async (req, res) => {
     const { data, handleAsync = true } = req.body;
     let resp = { success: true, message: 'initiated', error: null};
-    if (handleAsync) res.send(resp);
     
     try {
         let thumbnailBuffer;
 
         thumbnailBuffer = await captureScreenshot(data);
 
-        resp = { ...resp, message: `Image process complete for object ${s3Path}`, result: [{ body: uploadStatus, metaData }] };
+        resp = { ...resp, message: `Image process complete for object `, result: [{ body: uploadStatus, metaData }] };
         logger.info(resp.message);
     } catch (error) {
         logger.error('error =>' + error.message);
-        resp = { ...resp, message: `Image process failed for object ${s3Path}`, error: error.message, success: false };
+        resp = { ...resp, message: `Image process failed for object`, error: error.message, success: false };
     } finally {
         // console.log("resp thumbnail",resp);
+        resp = { ...resp, message: `Image process failed for object `, error: "finally block", success: false };
         if (!handleAsync) res.send(resp);
         return resp
     }
